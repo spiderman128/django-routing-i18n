@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-14 19:47+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\my_comment_app\admin.py:13
+msgid "Content"
+msgstr "Contenu"
+
+#: .\my_comment_app\admin.py:17
+msgid "Metadata"
+msgstr "Métadonnées"
+
+#: .\my_project\settings.py:85
+msgid "French"
+msgstr "Français"
+
+#: .\my_project\settings.py:86
+msgid "German"
+msgstr "Allemand"
+
+#: .\my_project\settings.py:87
+msgid "English"
+msgstr "Anglais"
+
+#: .\myapp\templates\layout.html:5 .\myapp\templates\layout.html:18
+msgid "Test Project"
+msgstr "Tester le projet"
+
+#: .\myapp\templates\layout.html:30
+msgid "Pages"
+msgstr "Pages"
+
+#: .\myapp\templates\layout.html:33
+msgid "News"
+msgstr "Actualités"
+
+#: .\myapp\templates\news.html:6
+msgid "News List"
+msgstr "Liste des actualités"
+
+#: .\myapp\templates\news.html:13 .\myapp\templates\news_detail.html:18
+#: .\myapp\templates\pages.html:12
+msgid "comment"
+msgstr "commentaire"
+
+#: .\myapp\templates\news_detail.html:13
+msgid "News Detail"
+msgstr "Détail de l'actualité"
+
+#: .\myapp\templates\news_detail.html:26
+msgid "Posted by"
+msgstr "Publié par"
+
+#: .\myapp\templates\news_detail.html:33
+msgid "Leave Comment"
+msgstr "Laisser un commentaire"
+
+#: .\myapp\templates\news_detail.html:41
+msgid "Post"
+msgstr "Publier"
+
+#: .\myapp\templates\news_detail.html:42
+msgid "Preview"
+msgstr "Aperçu"
+
+#: .\myapp\templates\pages.html:6
+msgid "Page List"
+msgstr "Liste de pages"

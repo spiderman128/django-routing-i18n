@@ -1,0 +1,19 @@
+{% extends "layout.html" %} 
+{% load comments %} 
+{% load i18n %}
+{% block content %}
+<div class="card">
+  <div class="card-header">{% trans "News List" %}</div>
+  <div class="card-body">
+    {% for news in news_list %}
+    <div class="news-item">
+      <h5><a href="{% url 'news_detail' news.slug %}">{{news.title}}</a></h5>
+      <p>{{news.text|slice:"0:150"}}...</p>
+      <p class="text-end" style="font-size: 12px;">
+        {% get_comment_count for news as comment_count %} {{ comment_count }} {% trans "comment" %}{{ comment_count|pluralize }}
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

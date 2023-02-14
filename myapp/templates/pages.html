@@ -1,0 +1,18 @@
+{% extends "layout.html" %} 
+{% load comments %}
+{% load i18n %}
+{% block content %}
+<div class="card">
+  <div class="card-header">{% trans "Page List" %}</div>
+  <div class="card-body">
+      {% for page in pages %}
+         <h4>{{page.title}}</h4>
+         <div>{{page.text|linebreaks}}</div>
+         <p class="text-end" style="font-size: 12px;">
+            {% get_comment_count for page as comment_count %} {{ comment_count }} {% trans "comment" %}{{ comment_count|pluralize }}
+          </p>
+         {% render_comment_list for page %}
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}

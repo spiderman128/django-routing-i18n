@@ -1,0 +1,50 @@
+{% extends "layout.html" %} 
+{% load comments %} 
+{% load i18n %}
+{% block style %}
+<style>
+  table tr:nth-child(5) {
+    display: none;
+  }
+</style>
+{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-header">{% trans "News Detail" %}</div>
+  <div class="card-body">
+    <h4>{{news.title}}</h4>
+    <div class="my-3">{{news.text|linebreaks}}</div>
+    <p class="text-end" style="font-size: 12px;">
+      {% get_comment_count for news as comment_count %} {{ comment_count }} {% trans "comment" %}{{ comment_count|pluralize }}
+    </p>
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_comment_list for news as comment_list %}
+    {% for comment in comment_list %}
+      {% if comment.localization == LANGUAGE_CODE %}
+      <div class="comment-item my-3">
+        <div style="font-style: italic">
+          <strong>{% trans "Posted by" %}: {{ comment.user_name }} on {{ comment.submit_date }} ({{ comment.localization|upper }})</strong>
+        </div>
+        <div>{{ comment.comment }}</div>
+      </div>
+      {% endif %}
+    {% endfor %}
+    <hr />
+    <h4 class="my-3">{% trans "Leave Comment" %}</h4>
+    {% get_comment_form for news as form %}
+      <table>
+        <form action="{% comment_form_target %}" method="post">
+          {% csrf_token %}
+          {{ form }}
+          <tr>
+            <td colspan="2" class="pt-3">
+              <input type="submit" class="btn btn-sm btn-primary" name="submit" value="{% trans 'Post' %}">
+              <input type="submit" class="btn btn-sm btn-secondary" name="preview" value="{% trans 'Preview' %}">
+            </td>
+          </tr>
+        </form>
+      </table>
+  </div>
+</div>
+{% endblock %}
+
