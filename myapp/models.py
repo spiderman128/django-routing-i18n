@@ -5,7 +5,11 @@ from django_comments.moderation import CommentModerator, moderator
 class Page(models.Model):
 
    title = models.CharField(max_length = 50)
+   title_de = models.CharField(max_length = 50, default='')
+   title_fr = models.CharField(max_length = 50, default='')
    text = models.TextField()
+   text_de = models.TextField(default='')
+   text_fr = models.TextField(default='')
    slug = models.CharField(max_length = 50, editable=False)
 
    def __unicode__ (self):
@@ -21,7 +25,11 @@ class Page(models.Model):
 class News(models.Model):
 
    title = models.CharField(max_length = 50)
+   title_de = models.CharField(max_length = 50, default='')
+   title_fr = models.CharField(max_length = 50, default='')
    text = models.TextField()
+   text_de = models.TextField(default='')
+   text_fr = models.TextField(default='')
    slug = models.CharField(max_length = 50, editable=False)
 
    def __unicode__ (self):
